@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import TextBox from './TextBox'
+import Display from './Display'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(){
+    super()
+    this.state ={
+      textDisplay: this.randomJob()
+    }
+  }
+
+  randomJob = () =>{
+    //list of random jobs to display on refresh
+    const joblist = ['React Developer', 'CSS Ninja', 'HTML5 GURU']
+    return joblist[Math.floor((Math.random() * joblist.length))]
+  }
+
+  changeText = (event) =>{
+    this.setState({textDisplay: event.target.value})
+  }
+
+  render(){
+    return (
+      <div>
+        <TextBox changeText={this.changeText}/>
+        <Display textDisplay={this.state.textDisplay}/>
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App
