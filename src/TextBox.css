@@ -1,0 +1,9 @@
+input {
+    border-style: none;
+    border-bottom: 3px solid black;
+}
+
+textarea:focus, input:focus {
+    outline: none;
+    border-bottom: 3px solid black;
+}

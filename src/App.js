@@ -8,12 +8,13 @@ class App extends React.Component {
     super()
     this.state ={
       textDisplay: this.randomJob()
+      //textDisplay: 'React Developer'
     }
   }
 
   randomJob = () =>{
     //list of random jobs to display on refresh
-    const joblist = ['React Developer', 'CSS Ninja', 'HTML5 GURU']
+    const joblist = ['React Developer', 'CSS Ninja', 'HTML5 GURU', 'Taco Salesman']
     return joblist[Math.floor((Math.random() * joblist.length))]
   }
 
